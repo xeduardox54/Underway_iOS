@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		A0BB40D72676BCAF00F63590 /* Underway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0BB40D52676BCAF00F63590 /* Underway.xcdatamodeld */; };
 		A0BB40D92676BCB400F63590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0BB40D82676BCB400F63590 /* Assets.xcassets */; };
 		A0BB40DC2676BCB400F63590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB40DA2676BCB400F63590 /* LaunchScreen.storyboard */; };
+		A0BB40E42676CAE900F63590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0BB40E32676CAE900F63590 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A0BB40D82676BCB400F63590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0BB40DB2676BCB400F63590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0BB40DD2676BCB400F63590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0BB40E32676CAE900F63590 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B77D2DC16EE65EA3A692F699 /* Pods-Underway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Underway.debug.xcconfig"; path = "Target Support Files/Pods-Underway/Pods-Underway.debug.xcconfig"; sourceTree = "<group>"; };
 		FFD7C7B4BEC8920E22ED4026 /* Pods_Underway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Underway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 				A0BB40CE2676BCAF00F63590 /* SceneDelegate.swift */,
 				A0BB40D02676BCAF00F63590 /* ViewController.swift */,
 				A0BB40D22676BCAF00F63590 /* Main.storyboard */,
+				A0BB40E32676CAE900F63590 /* GoogleService-Info.plist */,
 				A0BB40D82676BCB400F63590 /* Assets.xcassets */,
 				A0BB40DA2676BCB400F63590 /* LaunchScreen.storyboard */,
 				A0BB40DD2676BCB400F63590 /* Info.plist */,
@@ -91,7 +94,6 @@
 				B77D2DC16EE65EA3A692F699 /* Pods-Underway.debug.xcconfig */,
 				1A87F2C26AADF0BEBEA24E66 /* Pods-Underway.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0BB40DC2676BCB400F63590 /* LaunchScreen.storyboard in Resources */,
+				A0BB40E42676CAE900F63590 /* GoogleService-Info.plist in Resources */,
 				A0BB40D92676BCB400F63590 /* Assets.xcassets in Resources */,
 				A0BB40D42676BCAF00F63590 /* Main.storyboard in Resources */,
 			);
