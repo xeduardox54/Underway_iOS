@@ -7,4 +7,7 @@ target 'Underway' do
 
   # Pods for Underway
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  
 end
