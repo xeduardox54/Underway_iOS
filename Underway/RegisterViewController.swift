@@ -18,6 +18,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var dniTextField: UITextField!
+    @IBOutlet weak var registerDataView: UIView!
+    @IBOutlet weak var registerButtonView: UIButton!
+    
+    @IBAction func hasAccountButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func registerButton(_ sender: Any) {
         Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: {(user, error) in
             print("Intentando crear un usuario")
@@ -36,6 +43,12 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        registerDataView.layer.cornerRadius = 10
+        registerDataView.layer.shadowColor = UIColor.black.cgColor
+        registerDataView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        registerDataView.layer.shadowOpacity = 0.4
+        registerDataView.layer.shadowRadius = 4
+        registerButtonView.layer.cornerRadius = 5
     }
     
     func mostrarAlerta(titulo: String, mensaje: String, accion: String){
@@ -44,5 +57,5 @@ class RegisterViewController: UIViewController {
         alerta.addAction(btnCANCELOK)
         present(alerta, animated: true, completion: nil)
     }
-
+    
 }

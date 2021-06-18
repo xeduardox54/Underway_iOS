@@ -11,7 +11,6 @@ import Firebase
 import FirebaseAuth
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,20 +20,37 @@ class ViewController: UIViewController {
     @IBAction func signButton(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
             print("Intentando Iniciar Sesion")
+            var errorMessage = ""
             if error != nil{
-                print("Se presento el siguiente error: \(error)")
-                let alerta = UIAlertController(title: "Iniciar Sesion", message: "El Usuario \(self.emailTextField.text!) no existe. Cree un nuevo usuario", preferredStyle: .alert)
-                let btnOK = UIAlertAction(title: "Crear Usuario", style: .default, handler: {(UIAlertAction) in
-                    // self.performSegue(withIdentifier: "registrarUsuarioSegue", sender: nil)
-                    print("Registrar usuario")
-                })
-                let btnCANCEL = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
-                alerta.addAction(btnOK)
-                alerta.addAction(btnCANCEL)
-                self.present(alerta, animated: true, completion: nil)
+                if let errCode = AuthErrorCode(rawValue: error!._code){
+                    switch errCode {
+                    case .userNotFound:
+                        errorMessage = "El usuario no existe"
+                        self.mostrarAlerta(titulo: "Error", mensaje: "Se produjo un error al iniciar sesion. \(errorMessage)", accion: "Aceptar")
+                        print(errorMessage)
+                        break
+                    case .invalidEmail:
+                        errorMessage = "El formato del correo electronico es invalido."
+                        self.mostrarAlerta(titulo: "Error", mensaje: "Se produjo un error al iniciar sesion. \(errorMessage)", accion: "Aceptar")
+                        print(errorMessage)
+                        break
+                    case .wrongPassword:
+                        errorMessage = "La contraseña es incorrecta."
+                        self.mostrarAlerta(titulo: "Error", mensaje: "Se produjo un error al iniciar sesion. \(errorMessage)", accion: "Aceptar")
+                        print(errorMessage)
+                        break
+                    default:
+                        print("Error desconocido:", error)
+                    }
+                }
             }else{
+                /*
                 self.navigationController?.pushViewController(HomeViewController(user: self.emailTextField.text!, view: "HomeViewController"), animated: true)
-                print("Inicio de sesion exitoso")
+                */
+                // let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabBarStoryboard = UIStoryboard(name: "TabBar", bundle: nil)
+                let mainTabBarController = tabBarStoryboard.instantiateViewController(withIdentifier: "MainTabBarController")
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
             }
         }
     }
@@ -53,7 +69,13 @@ class ViewController: UIViewController {
         signButtonView.layer.cornerRadius = 5
         
     }
-
+    
+    func mostrarAlerta(titulo: String, mensaje: String, accion: String){
+        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        let btnCANCELOK = UIAlertAction(title: accion, style: .default, handler: nil)
+        alerta.addAction(btnCANCELOK)
+        present(alerta, animated: true, completion: nil)
+    }
 
 }
 
