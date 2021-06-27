@@ -20,6 +20,7 @@ class TransportistasVistaViewController: UIViewController, UITableViewDelegate, 
         tabla_cargas.dataSource = self
         Database.database().reference().child("cargasPrueba").observe(DataEventType.childAdded, with: {(snapshot) in print(snapshot)
             /*
+
             let carga = Carga()
             carga.carga_id = snapshot.key
             carga.usuario_id = (snapshot.value as! NSDictionary)["usuario_id"] as! String
