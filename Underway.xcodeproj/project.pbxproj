@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		396F6AA02688E55600A66526 /* DetallesCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6A9F2688E55600A66526 /* DetallesCargaViewController.swift */; };
 		6721954851AD0C20CD710020 /* Pods_Underway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD7C7B4BEC8920E22ED4026 /* Pods_Underway.framework */; };
 		A0BB40CD2676BCAF00F63590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB40CC2676BCAF00F63590 /* AppDelegate.swift */; };
 		A0BB40CF2676BCAF00F63590 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB40CE2676BCAF00F63590 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		1A87F2C26AADF0BEBEA24E66 /* Pods-Underway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Underway.release.xcconfig"; path = "Target Support Files/Pods-Underway/Pods-Underway.release.xcconfig"; sourceTree = "<group>"; };
+		396F6A9F2688E55600A66526 /* DetallesCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesCargaViewController.swift; sourceTree = "<group>"; };
 		A0BB40C92676BCAF00F63590 /* Underway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Underway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BB40CC2676BCAF00F63590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0BB40CE2676BCAF00F63590 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				F7D1F8B0268812620082307F /* CargasTabla.storyboard */,
 				F7D1F8B726881CBB0082307F /* TransportistasVistaViewController.swift */,
+				396F6A9F2688E55600A66526 /* DetallesCargaViewController.swift */,
 			);
 			path = TransportistaCargas;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				A0BB40D12676BCAF00F63590 /* ViewController.swift in Sources */,
 				A0BB40CD2676BCAF00F63590 /* AppDelegate.swift in Sources */,
 				A0BB40CF2676BCAF00F63590 /* SceneDelegate.swift in Sources */,
+				396F6AA02688E55600A66526 /* DetallesCargaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
