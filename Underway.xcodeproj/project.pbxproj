@@ -15,6 +15,7 @@
 		A0BB40D92676BCB400F63590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0BB40D82676BCB400F63590 /* Assets.xcassets */; };
 		A0BB40DC2676BCB400F63590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB40DA2676BCB400F63590 /* LaunchScreen.storyboard */; };
 		A0BB40E42676CAE900F63590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0BB40E32676CAE900F63590 /* GoogleService-Info.plist */; };
+		D8A73328268850AD002B052C /* OfertasTabla.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A73327268850AD002B052C /* OfertasTabla.storyboard */; };
 		F72578C1267AA9AC0027D5E4 /* CargaFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72578BF267AA9AC0027D5E4 /* CargaFormViewController.swift */; };
 		F730C22F267A9CEF0020B5D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB40D22676BCAF00F63590 /* Main.storyboard */; };
 		F73A95312678272E009FC66B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A95302678272E009FC66B /* RegisterViewController.swift */; };
@@ -42,6 +43,7 @@
 		A0BB40DD2676BCB400F63590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BB40E32676CAE900F63590 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B77D2DC16EE65EA3A692F699 /* Pods-Underway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Underway.debug.xcconfig"; path = "Target Support Files/Pods-Underway/Pods-Underway.debug.xcconfig"; sourceTree = "<group>"; };
+		D8A73327268850AD002B052C /* OfertasTabla.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OfertasTabla.storyboard; sourceTree = "<group>"; };
 		F72578BF267AA9AC0027D5E4 /* CargaFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargaFormViewController.swift; sourceTree = "<group>"; };
 		F73A95302678272E009FC66B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F73A953326782D61009FC66B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 		A0BB40CB2676BCAF00F63590 /* Underway */ = {
 			isa = PBXGroup;
 			children = (
-				F7548D52268834B5005B93B2 /* New Group */,
+				D8A7332626885083002B052C /* Ofertas */,
 				F7D1F8AE268812620082307F /* TransportistaCargas */,
 				F7443E09267D638000F4D550 /* UserCargas */,
 				F73A953226782D4D009FC66B /* models */,
@@ -123,6 +125,14 @@
 				1A87F2C26AADF0BEBEA24E66 /* Pods-Underway.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D8A7332626885083002B052C /* Ofertas */ = {
+			isa = PBXGroup;
+			children = (
+				D8A73327268850AD002B052C /* OfertasTabla.storyboard */,
+			);
+			path = Ofertas;
 			sourceTree = "<group>";
 		};
 		F73A953226782D4D009FC66B /* models */ = {
@@ -152,13 +162,6 @@
 				F749B16B267EDA350006D27A /* VerCargaViewController.swift */,
 			);
 			path = UserCargas;
-			sourceTree = "<group>";
-		};
-		F7548D52268834B5005B93B2 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F7D1F8AE268812620082307F /* TransportistaCargas */ = {
@@ -236,6 +239,7 @@
 				F730C22F267A9CEF0020B5D3 /* Main.storyboard in Resources */,
 				F7443E08267D532900F4D550 /* TabBar.storyboard in Resources */,
 				F7443E0D267D63CF00F4D550 /* UserCarga.storyboard in Resources */,
+				D8A73328268850AD002B052C /* OfertasTabla.storyboard in Resources */,
 				A0BB40D92676BCB400F63590 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
