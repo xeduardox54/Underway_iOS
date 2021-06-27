@@ -21,6 +21,10 @@
 		F73A953426782D61009FC66B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A953326782D61009FC66B /* User.swift */; };
 		F7443E08267D532900F4D550 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7443E07267D532900F4D550 /* TabBar.storyboard */; };
 		F7443E0D267D63CF00F4D550 /* UserCarga.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7443E0C267D63CF00F4D550 /* UserCarga.storyboard */; };
+		F748F0D4267D82CA002231D3 /* CargasUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748F0D3267D82CA002231D3 /* CargasUserViewController.swift */; };
+		F749B16A267ECF770006D27A /* Carga.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749B169267ECF770006D27A /* Carga.swift */; };
+		F749B16C267EDA350006D27A /* VerCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749B16B267EDA350006D27A /* VerCargaViewController.swift */; };
+		F7C0091F26817DE100139D2F /* CargaUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0091E26817DE100139D2F /* CargaUpdateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		F73A953326782D61009FC66B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F7443E07267D532900F4D550 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		F7443E0C267D63CF00F4D550 /* UserCarga.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserCarga.storyboard; sourceTree = "<group>"; };
+		F748F0D3267D82CA002231D3 /* CargasUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargasUserViewController.swift; sourceTree = "<group>"; };
+		F749B169267ECF770006D27A /* Carga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carga.swift; sourceTree = "<group>"; };
+		F749B16B267EDA350006D27A /* VerCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerCargaViewController.swift; sourceTree = "<group>"; };
+		F7C0091E26817DE100139D2F /* CargaUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargaUpdateViewController.swift; sourceTree = "<group>"; };
 		FFD7C7B4BEC8920E22ED4026 /* Pods_Underway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Underway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				F73A953326782D61009FC66B /* User.swift */,
+				F749B169267ECF770006D27A /* Carga.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -131,7 +140,10 @@
 			isa = PBXGroup;
 			children = (
 				F72578BF267AA9AC0027D5E4 /* CargaFormViewController.swift */,
+				F7C0091E26817DE100139D2F /* CargaUpdateViewController.swift */,
 				F7443E0C267D63CF00F4D550 /* UserCarga.storyboard */,
+				F748F0D3267D82CA002231D3 /* CargasUserViewController.swift */,
+				F749B16B267EDA350006D27A /* VerCargaViewController.swift */,
 			);
 			path = UserCargas;
 			sourceTree = "<group>";
@@ -254,9 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748F0D4267D82CA002231D3 /* CargasUserViewController.swift in Sources */,
+				F7C0091F26817DE100139D2F /* CargaUpdateViewController.swift in Sources */,
 				A0BB40D72676BCAF00F63590 /* Underway.xcdatamodeld in Sources */,
 				F72578C1267AA9AC0027D5E4 /* CargaFormViewController.swift in Sources */,
+				F749B16A267ECF770006D27A /* Carga.swift in Sources */,
 				F73A95312678272E009FC66B /* RegisterViewController.swift in Sources */,
+				F749B16C267EDA350006D27A /* VerCargaViewController.swift in Sources */,
 				F73A953426782D61009FC66B /* User.swift in Sources */,
 				A0BB40D12676BCAF00F63590 /* ViewController.swift in Sources */,
 				A0BB40CD2676BCAF00F63590 /* AppDelegate.swift in Sources */,

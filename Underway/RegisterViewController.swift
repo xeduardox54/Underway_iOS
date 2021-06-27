@@ -32,9 +32,9 @@ class RegisterViewController: UIViewController {
                 print("Se presento el siguiente error al crear el usuario: \(error)")
                 self.mostrarAlerta(titulo: "Error", mensaje: "Se produjo un error al registrar el Usuario. Verifique su conexion a internet y vuelva a intentarlo.", accion: "Aceptar")
             }else{
-                let userDB = ["email": self.emailTextField!.text, "name": self.nameTextField!.text, "surname": self.surnameTextField!.text, "dni": self.dniTextField!.text]
+                let userDB = ["correo": self.emailTextField!.text, "nombres": self.nameTextField!.text, "apellidos": self.surnameTextField!.text, "DNI": self.dniTextField!.text, "permiso_transporte": false] as [String : Any]
                 print("El usuario fue creado exitosamente")
-                Database.database().reference().child("users").child(user!.user.uid).setValue(userDB)
+                Database.database().reference().child("usuarios").child(user!.user.uid).setValue(userDB)
                 self.mostrarAlerta(titulo: "Nuevo Usuario", mensaje: "El usuario:\(self.emailTextField.text!) se creo correctamente..", accion: "Aceptar")
             }
         })

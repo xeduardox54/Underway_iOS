@@ -8,10 +8,10 @@
 
 import Foundation
 class User{
-    var email = ""
+    var apellidos = ""
+    var correo = ""
     var uid = ""
-    var name = ""
-    var surname = ""
-    var dni = ""
-    var permisions = false
+    var nombres = ""
+    var DNI = ""
+    var permiso_transporte = false
 }
