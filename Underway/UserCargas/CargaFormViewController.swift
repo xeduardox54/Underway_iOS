@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
+
 class CargaFormViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var imagePicker = UIImagePickerController()
     var imagenID = NSUUID().uuidString

@@ -1,30 +1,35 @@
 import UIKit
 import Firebase
 import SDWebImage
+import FirebaseAuth
+import FirebaseDatabase
 
 class CargasTablaCell:UITableViewCell {
     @IBOutlet weak var imagen_carga: UIImageView!
     @IBOutlet weak var lblDireccion: UILabel!
     @IBOutlet weak var lblPrecio: UILabel!
     @IBOutlet weak var lblDescripcion: UILabel!
+    var uid = ""
     @IBAction func btnOfertar(_ sender: Any) {
-        print("Clic")
         let ac = UIAlertController(title: "Realizar Oferta", message: "Ingrese el precio que desea ofertar a la carga del cliente", preferredStyle: .alert)
-        
         ac.addTextField()
-
         let submitAction = UIAlertAction(title: "Enviar", style: .default) { (UIAlertAction) in
             let answer = ac.textFields![0]
             print(answer.text!)
+            print(self.uid)
+            let ofertas = [
+                "precio": Double(answer.text!) ?? 0.0,
+                "transportista_id": (Auth.auth().currentUser?.uid)!] as [String : Any]
+            Database.database().reference().child("cargas").child(self.uid).child("ofertas").childByAutoId().setValue(ofertas)
             
-//           
+            
         }
         let cancelBTN = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
 
         ac.addAction(submitAction)
         ac.addAction(cancelBTN)
         UIApplication.shared.keyWindow?.rootViewController?.present(ac, animated: true, completion: nil)
-        
+
     }
     
 }
@@ -70,12 +75,14 @@ class TransportistasVistaViewController: UIViewController, UITableViewDelegate, 
         cell.lblDireccion?.text = "\(carga.ubicacion_inicio) - \(carga.ubicacion_destino)"
         cell.lblPrecio?.text = "$. \(carga.precio)"
         cell.imagen_carga?.sd_setImage(with: URL(string: carga.imagen_url), completed: nil)
+        cell.uid = carga.id
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cargaelegida = cargas[indexPath.row]
         performSegue(withIdentifier: "segueDetallesCarga", sender: cargaelegida)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
