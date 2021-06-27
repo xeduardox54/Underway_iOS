@@ -24,6 +24,7 @@ class CargasUserViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         Database.database().reference().child("cargas").observe(DataEventType.childAdded, with: {(carga_user) in
             let carga = Carga()
+            carga.id = carga_user.key
             carga.nombre_carga = (carga_user.value as! NSDictionary)["nombre_carga"] as! String
             carga.owner_id = (carga_user.value as! NSDictionary)["owner_id"] as! String
             carga.descripcion_carga = (carga_user.value as! NSDictionary)["descripcion_carga"] as! String
@@ -35,12 +36,38 @@ class CargasUserViewController: UIViewController, UITableViewDelegate, UITableVi
             carga.disponible = (carga_user.value as! NSDictionary)["disponible"] as! Bool
             carga.tipo = (carga_user.value as! NSDictionary)["tipo"] as! String
             
-            print((Auth.auth().currentUser?.uid)!)
             if(carga.owner_id == (Auth.auth().currentUser?.uid)!){
                 self.cargas.append(carga)
                 self.tableView.reloadData()
             }
         })
+        
+        Database.database().reference().child("cargas").observe(DataEventType.childChanged, with: {(carga_user) in
+            let cargaChanged = Carga()
+            cargaChanged.id = carga_user.key
+            cargaChanged.nombre_carga = (carga_user.value as! NSDictionary)["nombre_carga"] as! String
+            cargaChanged.owner_id = (carga_user.value as! NSDictionary)["owner_id"] as! String
+            cargaChanged.descripcion_carga = (carga_user.value as! NSDictionary)["descripcion_carga"] as! String
+            cargaChanged.imagen_url = (carga_user.value as! NSDictionary)["imagen_url"] as! String
+            cargaChanged.ubicacion_inicio = (carga_user.value as! NSDictionary)["ubicacion_inicio"] as! String
+            cargaChanged.ubicacion_destino = (carga_user.value as! NSDictionary)["ubicacion_destino"] as! String
+            cargaChanged.peso = (carga_user.value as! NSDictionary)["peso"] as! String
+            cargaChanged.precio = (carga_user.value as! NSDictionary)["precio"] as! Double
+            cargaChanged.disponible = (carga_user.value as! NSDictionary)["disponible"] as! Bool
+            cargaChanged.tipo = (carga_user.value as! NSDictionary)["tipo"] as! String
+            
+            if(cargaChanged.owner_id == (Auth.auth().currentUser?.uid)!){
+                var iterator = 0
+                for carga in self.cargas{
+                    if carga.id == carga_user.key{
+                        self.cargas[iterator] = cargaChanged
+                    }
+                    iterator += 1
+                }
+                self.tableView.reloadData()
+            }
+        })
+        
         Database.database().reference().child("cargas").observe(DataEventType.childRemoved, with: {(carga_user) in
                 var iterator = 0
                 for carga in self.cargas{
@@ -68,8 +95,8 @@ class CargasUserViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
 
             let carga = cargas[indexPath.row]
-            cell.textLabel?.text = carga.nombre_carga
-            cell.detailTextLabel?.text = carga.descripcion_carga
+            cell.textLabel?.text = carga.nombre_carga.isEmpty ? "Sin Titulo" : carga.nombre_carga
+            cell.detailTextLabel?.text = carga.descripcion_carga.isEmpty ? "Sin Titulo" : carga.descripcion_carga
         }
         return cell
     }
