@@ -25,6 +25,8 @@
 		F749B16A267ECF770006D27A /* Carga.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749B169267ECF770006D27A /* Carga.swift */; };
 		F749B16C267EDA350006D27A /* VerCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749B16B267EDA350006D27A /* VerCargaViewController.swift */; };
 		F7C0091F26817DE100139D2F /* CargaUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0091E26817DE100139D2F /* CargaUpdateViewController.swift */; };
+		F7D1F8B1268812620082307F /* TransportistasVistaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1F8AF268812620082307F /* TransportistasVistaViewController.swift */; };
+		F7D1F8B2268812620082307F /* CargasTabla.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D1F8B0268812620082307F /* CargasTabla.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		F749B169267ECF770006D27A /* Carga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carga.swift; sourceTree = "<group>"; };
 		F749B16B267EDA350006D27A /* VerCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerCargaViewController.swift; sourceTree = "<group>"; };
 		F7C0091E26817DE100139D2F /* CargaUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargaUpdateViewController.swift; sourceTree = "<group>"; };
+		F7D1F8AF268812620082307F /* TransportistasVistaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportistasVistaViewController.swift; sourceTree = "<group>"; };
+		F7D1F8B0268812620082307F /* CargasTabla.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CargasTabla.storyboard; sourceTree = "<group>"; };
 		FFD7C7B4BEC8920E22ED4026 /* Pods_Underway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Underway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +97,7 @@
 		A0BB40CB2676BCAF00F63590 /* Underway */ = {
 			isa = PBXGroup;
 			children = (
+				F7D1F8AE268812620082307F /* TransportistaCargas */,
 				F7443E09267D638000F4D550 /* UserCargas */,
 				F73A953226782D4D009FC66B /* models */,
 				A0BB40CC2676BCAF00F63590 /* AppDelegate.swift */,
@@ -146,6 +151,15 @@
 				F749B16B267EDA350006D27A /* VerCargaViewController.swift */,
 			);
 			path = UserCargas;
+			sourceTree = "<group>";
+		};
+		F7D1F8AE268812620082307F /* TransportistaCargas */ = {
+			isa = PBXGroup;
+			children = (
+				F7D1F8AF268812620082307F /* TransportistasVistaViewController.swift */,
+				F7D1F8B0268812620082307F /* CargasTabla.storyboard */,
+			);
+			path = TransportistaCargas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0BB40DC2676BCB400F63590 /* LaunchScreen.storyboard in Resources */,
+				F7D1F8B2268812620082307F /* CargasTabla.storyboard in Resources */,
 				A0BB40E42676CAE900F63590 /* GoogleService-Info.plist in Resources */,
 				F730C22F267A9CEF0020B5D3 /* Main.storyboard in Resources */,
 				F7443E08267D532900F4D550 /* TabBar.storyboard in Resources */,
@@ -271,6 +286,7 @@
 				A0BB40D72676BCAF00F63590 /* Underway.xcdatamodeld in Sources */,
 				F72578C1267AA9AC0027D5E4 /* CargaFormViewController.swift in Sources */,
 				F749B16A267ECF770006D27A /* Carga.swift in Sources */,
+				F7D1F8B1268812620082307F /* TransportistasVistaViewController.swift in Sources */,
 				F73A95312678272E009FC66B /* RegisterViewController.swift in Sources */,
 				F749B16C267EDA350006D27A /* VerCargaViewController.swift in Sources */,
 				F73A953426782D61009FC66B /* User.swift in Sources */,
