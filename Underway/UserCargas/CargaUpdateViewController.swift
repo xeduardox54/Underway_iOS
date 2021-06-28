@@ -1,11 +1,3 @@
-//
-//  CargaUpdateViewController.swift
-//  Underway
-//
-//  Created by tkmiz on 6/21/21.
-//  Copyright © 2021 Quinto Semestre. All rights reserved.
-//
-
 import UIKit
 import Firebase
 import FirebaseAuth
@@ -58,19 +50,18 @@ class CargaUpdateViewController: UIViewController, UIImagePickerControllerDelega
                             print("Ocurrio un error al obtener información de imagen")
                             return
                         }
-                        let cargaUpdate = [
-                            "descripcion_carga": self.descripcionTextField.text!,
-                            "disponible": self.swEstado.isOn,
-                            "imagen_url": url?.absoluteString ?? "",
-                            "nombre_carga": self.nombreTextField.text!,
-                            "owner_id": (Auth.auth().currentUser?.uid)!,
-                            "peso": self.pesoTextField.text!,
-                            "precio": Double(self.precioTextField.text!) ?? 0.0,
-                            "tipo": self.tipoTextField.text!,
-                            "ubicacion_destino": self.ubicacionInicioTextField.text!,
-                            "ubicacion_inicio": self.ubicacionDestinoTextField.text!,
-                            ] as [String : Any]
-                        Database.database().reference().child("cargas").child(self.carga.id).setValue(cargaUpdate)
+
+                        let refChild = Database.database().reference().child("cargas").child(self.carga.id)
+                        refChild.child("descripcion_carga").setValue(self.descripcionTextField.text!)
+                        refChild.child("disponible").setValue(self.swEstado.isOn)
+                        refChild.child("imagen_url").setValue(url?.absoluteString ?? "")
+                        refChild.child("nombre_carga").setValue(self.nombreTextField.text!)
+                        refChild.child("owner_id").setValue((Auth.auth().currentUser?.uid)!)
+                        refChild.child("peso").setValue(self.pesoTextField.text!)
+                        refChild.child("precio").setValue(Double(self.precioTextField.text!) ?? 0.0)
+                        refChild.child("tipo").setValue(self.tipoTextField.text!)
+                        refChild.child("ubicacion_destino").setValue(self.ubicacionInicioTextField.text!)
+                        refChild.child("ubicacion_inicio").setValue(self.ubicacionDestinoTextField.text!)
                         
                         self.carga.descripcion_carga = self.descripcionTextField.text!
                         self.carga.disponible = self.swEstado.isOn
@@ -99,7 +90,7 @@ class CargaUpdateViewController: UIViewController, UIImagePickerControllerDelega
         tipoTextField.text = carga.tipo
         pesoTextField.text = carga.peso
         precioTextField.text = String(carga.precio)
-        swEstado.isEnabled = carga.disponible
+        swEstado.isOn = carga.disponible
         ubicacionInicioTextField.text = carga.ubicacion_inicio
         ubicacionDestinoTextField.text = carga.ubicacion_destino
     }

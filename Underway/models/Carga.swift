@@ -19,4 +19,5 @@ class Carga {
     var tipo: String = ""
     var ubicacion_destino: String = ""
     var ubicacion_inicio: String = ""
+    var ofertas = [Oferta]()
 }

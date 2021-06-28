@@ -23,29 +23,13 @@ class VerCargaViewController: UIViewController, CargaSendingDelegateProtocol {
         performSegue(withIdentifier: "updateCargaSegue", sender: carga)
      }
      
+    @IBAction func verOfertasTapped(_ sender: Any) {
+        performSegue(withIdentifier: "verOfertasSegue", sender: carga)
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Carga ID", carga.id)
-        // Do any additional setup after loading the view.
-        /*
-        Database.database().reference().child("cargas").child(carga.id).observe(DataEventType.childChanged, with: {(snapshot) in
-            let cargaChanged = Carga()
-            let value = snapshot.value as? NSDictionary
-            cargaChanged.id = snapshot.key
-            cargaChanged.nombre_carga = value?["nombre_carga"] as? String ?? ""
-            cargaChanged.owner_id = value?["owner_id"] as? String ?? ""
-            cargaChanged.descripcion_carga = value?["descripcion_carga"] as? String ?? ""
-            cargaChanged.imagen_url = value?["imagen_url"] as? String ?? ""
-            cargaChanged.ubicacion_inicio = value?["ubicacion_inicio"] as? String ?? ""
-            cargaChanged.ubicacion_destino = value?["ubicacion_destino"] as? String ?? ""
-            cargaChanged.peso = value?["peso"] as? String ?? ""
-            cargaChanged.precio = value?["precio"] as? Double ?? 0.0
-            cargaChanged.disponible = value?["disponible"] as? Bool ?? true
-            cargaChanged.tipo = value?["tipo"] as? String ?? ""
-            print("Array de Firebase", value)
-            print("Valor de seteado", cargaChanged)
-        })
-         */
         nombreLabelView.text = carga.nombre_carga
         cargaImageView.sd_setImage(with: URL(string: carga.imagen_url), completed: nil)
         descripcionLabelView.text = carga.descripcion_carga
@@ -74,6 +58,9 @@ class VerCargaViewController: UIViewController, CargaSendingDelegateProtocol {
             let siguienteVC = segue.destination as! CargaUpdateViewController
             siguienteVC.carga = sender as! Carga
             siguienteVC.delegate = self
+        } else if segue.identifier == "verOfertasSegue" {
+            let siguienteVC = segue.destination as! OfertasCargaViewController
+            siguienteVC.carga = sender as! Carga
         }
     }
 

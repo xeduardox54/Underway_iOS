@@ -10,7 +10,7 @@ import Foundation
 class User{
     var apellidos = ""
     var correo = ""
-    var uid = ""
+    var id = ""
     var nombres = ""
     var DNI = ""
     var permiso_transporte = false
