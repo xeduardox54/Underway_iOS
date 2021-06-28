@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mbi-lJ-mrq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mapas View Controller-->
+        <scene sceneID="aTQ-WI-OC0">
+            <objects>
+                <viewController id="Kk5-iR-8lu" customClass="MapasViewController" customModule="Underway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dcn-jO-yW8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I2P-I0-eEL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Kk5-iR-8lu" id="PT9-1y-GHh"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOC-DK-iN2">
+                                <rect key="frame" x="354" y="108" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YTb-6I-kdc"/>
+                                    <constraint firstAttribute="width" constant="50" id="bVw-1y-IPW"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="brujula"/>
+                                <connections>
+                                    <action selector="centrarTapped:" destination="Kk5-iR-8lu" eventType="touchUpInside" id="Ddj-Dw-Iwp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qKV-H8-frG" firstAttribute="trailing" secondItem="I2P-I0-eEL" secondAttribute="trailing" id="4OM-Mi-x9U"/>
+                            <constraint firstItem="qKV-H8-frG" firstAttribute="trailing" secondItem="OOC-DK-iN2" secondAttribute="trailing" constant="10" id="H2T-rT-MJ4"/>
+                            <constraint firstItem="I2P-I0-eEL" firstAttribute="top" secondItem="qKV-H8-frG" secondAttribute="top" id="Hnt-Tj-tEP"/>
+                            <constraint firstItem="qKV-H8-frG" firstAttribute="bottom" secondItem="I2P-I0-eEL" secondAttribute="bottom" id="Lle-X9-xEu"/>
+                            <constraint firstItem="I2P-I0-eEL" firstAttribute="leading" secondItem="qKV-H8-frG" secondAttribute="leading" id="M3K-Fh-Hsy"/>
+                            <constraint firstItem="OOC-DK-iN2" firstAttribute="top" secondItem="qKV-H8-frG" secondAttribute="top" constant="20" id="kZx-Z5-4Q9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qKV-H8-frG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OMF-Px-Pgr"/>
+                    <connections>
+                        <outlet property="mapView" destination="I2P-I0-eEL" id="Hs9-IV-Dr6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADg-ql-xWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986.95652173913049" y="229.6875"/>
+        </scene>
+        <!--Mapas-->
+        <scene sceneID="7mn-os-fzq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mbi-lJ-mrq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapas" image="map" catalog="system" selectedImage="map" id="Mim-ii-pAy"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MMM-Xh-w0v">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kk5-iR-8lu" kind="relationship" relationship="rootViewController" id="3dr-if-Psm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zxy-MW-Ajf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76.811594202898561" y="229.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="brujula" width="360" height="360"/>
+        <image name="map" catalog="system" width="64" height="56"/>
+    </resources>
+</document>

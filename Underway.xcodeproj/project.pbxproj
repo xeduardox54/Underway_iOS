@@ -31,6 +31,9 @@
 		F7D1F8B2268812620082307F /* CargasTabla.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D1F8B0268812620082307F /* CargasTabla.storyboard */; };
 		F7D1F8B626881C7B0082307F /* Carga.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1F8B526881C7B0082307F /* Carga.swift */; };
 		F7D1F8B826881CBB0082307F /* TransportistasVistaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1F8B726881CBB0082307F /* TransportistasVistaViewController.swift */; };
+		F7EDB6892689723300130BB4 /* Mapas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EDB6882689723300130BB4 /* Mapas.storyboard */; };
+		F7EDB68B2689723E00130BB4 /* MapasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EDB68A2689723D00130BB4 /* MapasViewController.swift */; };
+		F7EDB68D268973B400130BB4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EDB68C268973B400130BB4 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		F7D1F8B0268812620082307F /* CargasTabla.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CargasTabla.storyboard; sourceTree = "<group>"; };
 		F7D1F8B526881C7B0082307F /* Carga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carga.swift; sourceTree = "<group>"; };
 		F7D1F8B726881CBB0082307F /* TransportistasVistaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportistasVistaViewController.swift; sourceTree = "<group>"; };
+		F7EDB6882689723300130BB4 /* Mapas.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mapas.storyboard; sourceTree = "<group>"; };
+		F7EDB68A2689723D00130BB4 /* MapasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapasViewController.swift; sourceTree = "<group>"; };
+		F7EDB68C268973B400130BB4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FFD7C7B4BEC8920E22ED4026 /* Pods_Underway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Underway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7EDB68D268973B400130BB4 /* MapKit.framework in Frameworks */,
 				6721954851AD0C20CD710020 /* Pods_Underway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +86,7 @@
 		071A42BB16B4336B10456845 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7EDB68C268973B400130BB4 /* MapKit.framework */,
 				FFD7C7B4BEC8920E22ED4026 /* Pods_Underway.framework */,
 			);
 			name = Frameworks;
@@ -105,6 +113,7 @@
 		A0BB40CB2676BCAF00F63590 /* Underway */ = {
 			isa = PBXGroup;
 			children = (
+				F7EDB6872689720700130BB4 /* Mapas */,
 				D8A7332626885083002B052C /* Ofertas */,
 				F7D1F8AE268812620082307F /* TransportistaCargas */,
 				F7443E09267D638000F4D550 /* UserCargas */,
@@ -182,6 +191,15 @@
 			path = TransportistaCargas;
 			sourceTree = "<group>";
 		};
+		F7EDB6872689720700130BB4 /* Mapas */ = {
+			isa = PBXGroup;
+			children = (
+				F7EDB6882689723300130BB4 /* Mapas.storyboard */,
+				F7EDB68A2689723D00130BB4 /* MapasViewController.swift */,
+			);
+			path = Mapas;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,6 +267,7 @@
 				F7443E08267D532900F4D550 /* TabBar.storyboard in Resources */,
 				F7443E0D267D63CF00F4D550 /* UserCarga.storyboard in Resources */,
 				D8A73328268850AD002B052C /* OfertasTabla.storyboard in Resources */,
+				F7EDB6892689723300130BB4 /* Mapas.storyboard in Resources */,
 				A0BB40D92676BCB400F63590 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +326,7 @@
 				F70511492688F80D00CA0324 /* Oferta.swift in Sources */,
 				A0BB40D72676BCAF00F63590 /* Underway.xcdatamodeld in Sources */,
 				F72578C1267AA9AC0027D5E4 /* CargaFormViewController.swift in Sources */,
+				F7EDB68B2689723E00130BB4 /* MapasViewController.swift in Sources */,
 				F73A95312678272E009FC66B /* RegisterViewController.swift in Sources */,
 				F7B7D8EC2689110A001B17B9 /* OfertasCargaViewController.swift in Sources */,
 				F7D1F8B826881CBB0082307F /* TransportistasVistaViewController.swift in Sources */,

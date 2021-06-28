@@ -116,6 +116,11 @@
                             <constraint firstItem="rn6-vq-w3D" firstAttribute="top" secondItem="92b-ET-bny" secondAttribute="bottom" constant="20" id="zXD-DT-K1d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="rn6-vq-w3D"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="dKA-4n-u3a"/>
                     <connections>

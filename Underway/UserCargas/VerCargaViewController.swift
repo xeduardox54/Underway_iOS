@@ -9,14 +9,15 @@ class VerCargaViewController: UIViewController, CargaSendingDelegateProtocol {
     
     @IBOutlet weak var nombreLabelView: UILabel!
     @IBOutlet weak var cargaImageView: UIImageView!
-    @IBOutlet weak var descripcionLabelView: UITextView!
+    @IBOutlet weak var descripcionLabelView: UILabel!
     @IBOutlet weak var tipoLabelView: UILabel!
     @IBOutlet weak var pesoLabelView: UILabel!
     @IBOutlet weak var precioLabelView: UILabel!
     @IBOutlet weak var estadoLabelView: UILabel!
     @IBOutlet weak var ubInicioLabelView: UILabel!
     @IBOutlet weak var ubDestinoLabelView: UILabel!
- 
+    @IBOutlet weak var descripcionView: UIView!
+    
     var carga = Carga()
     
     @IBAction func editTapped(_ sender: Any) {
@@ -30,15 +31,24 @@ class VerCargaViewController: UIViewController, CargaSendingDelegateProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cargaImageView?.layer.cornerRadius = 20
+        cargaImageView?.clipsToBounds = true
+        
+        descripcionView?.layer.cornerRadius = 20
+        descripcionView?.clipsToBounds = true
+        descripcionView?.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        
         nombreLabelView.text = carga.nombre_carga
         cargaImageView.sd_setImage(with: URL(string: carga.imagen_url), completed: nil)
         descripcionLabelView.text = carga.descripcion_carga
         tipoLabelView.text = carga.tipo
         pesoLabelView.text = carga.peso
         estadoLabelView.text = carga.disponible ? "Disponible" : "No disponible"
-        precioLabelView.text = String(carga.precio)
+        precioLabelView.text = "$ \(carga.precio)"
         ubInicioLabelView.text = carga.ubicacion_inicio
         ubDestinoLabelView.text = carga.ubicacion_destino
+
     }
     
     func sendDataToVerCargaViewController(miCarga: Carga) {
